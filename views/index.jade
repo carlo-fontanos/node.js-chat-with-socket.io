@@ -2,10 +2,13 @@ extends layout
 
 block content
 	h1= title
-	#content(style='width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;')
-	.controls
-		| Name: 
-		input#name(style='width:350px;')
-		br
-		input#field(style='width:350px;')
-		input#send(type='button', value='send')
+	.row
+		.col-md-6
+			#content.form-control(style='width: 100%; height: 300px; margin: 0 0 20px 0; overflow-y: scroll;')
+			.form-group
+				label Name: 
+				input#name.form-control
+			.form-group
+				label Message: 
+				input#field.form-control
+			input#send.btn.btn-success(type='button', value='Send')
