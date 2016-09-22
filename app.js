@@ -10,7 +10,7 @@ var users = require('./routes/users');
 
 var app = express();
 
-/* Setup socket.io and express to run on same port (3000) */
+/* Setup socket.io and express to run on same port (3100) */
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
