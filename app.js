@@ -10,8 +10,11 @@ var users = require('./routes/users');
 
 var app = express();
 
-var port = 3100;
-var io = require('socket.io').listen(app.listen(port));
+/* Setup socket.io and express to run on same port (3000) */
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+
+server.listen(3100);
 
 io.sockets.on('connection', function (socket) {
     socket.emit('message', { message: 'welcome to the chat' });
